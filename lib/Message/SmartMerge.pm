@@ -10,14 +10,7 @@ use Message::Transform qw(mtransform);
 
 Message::SmartMerge - Enforce downstream transformations on message streams
 
-=head1 VERSION
-
-Version 0.1
-
 =cut
-
-our $VERSION = '0.1';
-
 
 =head1 SYNOPSIS
 
