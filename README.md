@@ -19,7 +19,6 @@ Message::SmartMerge - Enforce downstream transformations on message streams
     #no merges, so pass through:
     #emit sends { instance => 'i1', x => 'y', this => 'whatever' }
     
-
     $merge->add_merge({
         merge_id => 'm1',
         match => {x => 'y'},
@@ -357,24 +356,16 @@ Please report any bugs or feature requests to `bug-message-smartmerge at rt.cpan
 the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Message-SmartMerge](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Message-SmartMerge).  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
-
-
 # SEE ALSO
 
 http://c2.com/cgi/wiki?AlanKayOnMessaging
 http://spin.atomicobject.com/2012/11/15/message-oriented-programming/
-
-
-
-
 
 # SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc Message::SmartMerge
-
-
 
 You can also look for information at:
 
@@ -394,11 +385,7 @@ You can also look for information at:
 
     [https://metacpan.org/module/Message::SmartMerge](https://metacpan.org/module/Message::SmartMerge)
 
-
-
 # ACKNOWLEDGEMENTS
-
-
 
 # LICENSE AND COPYRIGHT
 
@@ -408,7 +395,7 @@ This program is free software; you can redistribute it and/or modify it
 under the terms of the the Artistic License (2.0). You may obtain a
 copy of the full license at:
 
-[http://www.perlfoundation.org/artistic\_license\_2\_0](http://www.perlfoundation.org/artistic\_license\_2\_0)
+[http://www.perlfoundation.org/artistic\_license\_2\_0](http://www.perlfoundation.org/artistic_license_2_0)
 
 Any use, modification, and distribution of the Standard or Modified
 Versions is governed by this Artistic License. By using, modifying or
@@ -439,5 +426,3 @@ YOUR LOCAL LAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR
 CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR
 CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-

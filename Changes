@@ -1,4 +1,5 @@
 {{$NEXT}}
+    - Added features to configurably ignore some fields
 
 1.132270  2013-08-14 18:21:26 PST8PDT
     - Moved to Dist::Zilla

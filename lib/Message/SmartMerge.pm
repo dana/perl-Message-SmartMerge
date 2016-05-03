@@ -245,6 +245,8 @@ sub new {
     my %args = @_;
     bless ($self, $class);
 
+    $self->{keep_only} = $args{keep_only}
+        if $args{keep_only};
     $self->{merges} = $args{state}->{merges} || {};
     $self->{instances} = $args{state}->{instances} || {};
     $self->config($args{state}->{config})
@@ -352,6 +354,17 @@ sub _expire_merges {
             $self->remove_merge($merge_id);
         }
     }
+}
+
+sub _get_only {
+    my $self = shift;
+    my $message = shift;
+    if(not $self->{config} or not $self->{config}->{keep_only}) {
+        return $message;
+    }
+    my $ret = {};
+    $ret->{$_} = $message->{$_} for @{$self->{config}->{keep_only}};
+    return $ret;
 }
 
 =head2 add_merge
@@ -522,11 +535,11 @@ sub message {
         $instances->{$instance_name} = {
             cleared_merges => {},
             initial_ts => time,
-            message => $message,
+            message => $self->_get_only($message),
         };
     } else {
         $previous_message = $instances->{$instance_name}->{message};
-        $instances->{$instance_name}->{message} = $message;
+        $instances->{$instance_name}->{message} = $self->_get_only($message);
     }
     my $instance = $instances->{$instance_name};
     my $matching_merge_ids = {};
